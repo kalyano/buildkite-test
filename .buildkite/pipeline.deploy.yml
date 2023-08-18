@@ -2,8 +2,4 @@ steps:
   - command: "curl -sL go.armory.io/get-cli | bash"
   - command: "source ~/.bash_profile"
   - command: "/root/.avm/bin/armory deploy start -f armory-deploy.yml -c NB7l5woTJ3P8SjUQYe7yNQxzSZkrvDLA -s z8EkU0esFgUG7EWj-VyUmL3YiQJIq39S1VR6n1xV9EVE8OirLqk8MJerrMeRGttl"
-  - command: "go build -o dist/my-app ."
-    artifact_paths: "./dist/my-app"
-    plugins:
-      - docker#v5.8.0:
-          image: "golang:1.11"
+  - command: "armory deploy start -f armory-deploy.yml -c NB7l5woTJ3P8SjUQYe7yNQxzSZkrvDLA -s z8EkU0esFgUG7EWj-VyUmL3YiQJIq39S1VR6n1xV9EVE8OirLqk8MJerrMeRGttl"
