@@ -1,4 +1,5 @@
 steps:
+  - command: chown buildkite-agent /var/run/docker.sock
   - command: armory deploy start --file armory-deploy.yml -c NB7l5woTJ3P8SjUQYe7yNQxzSZkrvDLA -s z8EkU0esFgUG7EWj-VyUmL3YiQJIq39S1VR6n1xV9EVE8OirLqk8MJerrMeRGttl
     plugins:
       - docker#v3.2.0:
