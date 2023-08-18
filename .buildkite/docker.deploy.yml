@@ -8,5 +8,6 @@ steps:
           always-pull: true
           mount-checkout: true
           shell: false
+          debug: true
           #volumes:
             #- "/git:/."
