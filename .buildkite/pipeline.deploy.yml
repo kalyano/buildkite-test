@@ -1,5 +1,6 @@
 steps:
   - command: "curl -sL go.armory.io/get-cli | bash"
+  - command: "armory deploy start -f /armory-deploy.yml -c kals_client_id -s kals_secret"
   - command: "go build -o dist/my-app ."
     artifact_paths: "./dist/my-app"
     plugins:
