@@ -5,3 +5,4 @@ steps:
           image: "armory/armory-cli"
           always-pull: true
           mount-checkout: false
+          shell: false
