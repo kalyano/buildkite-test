@@ -4,7 +4,7 @@ steps:
       - docker#v3.2.0:
           image: "armory/armory-cli"
           always-pull: true
-          mount-checkout: false
+          mount-checkout: true
           shell: false
-          volumes:
-            - "/git:/."
+          #volumes:
+            #- "/git:/."
