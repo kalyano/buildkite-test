@@ -1,16 +1,29 @@
 version: v1
 kind: kubernetes
-application: demo
-deploymentConfig:
-  keepDeploymentObject: true
-targets: #This section defines the targets to which you are deploying, and their constraints.
-  dev:
-    account: kind
+application: potato-facts
+targets:
+  staging:
+    account: kals-deployment-cluster
+    namespace: kal-deployments
     strategy: rolling
-manifests: #This section defines the Manifests you are deploying, by default they reach all targets, but you can specify certain targets if needed.
-- path: k8s/deployment.yml
-rolling:
-  canary:
-    steps:
-    - setWeight:
-        weight: 100
+  prod:
+    account: kals-deployment-cluster
+    namespace: kal-deployments-prod
+    strategy: rolling
+    constraints:
+      dependsOn: ["staging"]
+manifests:
+  # This tutorial uses URLs to ensure a simple first-time deployment experience.
+  # You can also use relative file paths to define manifest locations.
+  - path: https://raw.githubusercontent.com/kalyano/cdaas-examples/main/hello-armory/manifests/potato-facts-v1.yaml
+  - path: https://raw.githubusercontent.com/kalyano/cdaas-examples/main/hello-armory/manifests/potato-facts-service.yaml
+  - path: https://raw.githubusercontent.com/kalyano/cdaas-examples/main/hello-armory/manifests/staging-namespace.yaml
+    targets: ["staging"]
+  - path: https://raw.githubusercontent.com/kalyano/cdaas-examples/main/hello-armory/manifests/prod-namespace.yaml
+    targets: ["prod"]
+strategies:
+  rolling:
+    canary:
+      steps:
+        - setWeight:
+            weight: 100
