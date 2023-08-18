@@ -1,4 +1,5 @@
 steps:
+  - command: "curl -sL go.armory.io/get-cli | bash"
   - command: "go build -o dist/my-app ."
     artifact_paths: "./dist/my-app"
     plugins:
