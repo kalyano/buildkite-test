@@ -7,4 +7,4 @@ steps:
           mount-checkout: false
           shell: false
           volumes:
-            - "./:/git"
+            - "/git:/."
