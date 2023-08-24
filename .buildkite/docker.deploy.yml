@@ -1,6 +1,6 @@
 steps:
 #  - command: armory deploy start -f https://go.armory.io/hello-armory-first-deployment -c NB7l5woTJ3P8SjUQYe7yNQxzSZkrvDLA -s z8EkU0esFgUG7EWj-VyUmL3YiQJIq39S1VR6n1xV9EVE8OirLqk8MJerrMeRGttl
-  - command: deploy start -f https://go.armory.io/hello-armory-first-deployment -c NB7l5woTJ3P8SjUQYe7yNQxzSZkrvDLA -s z8EkU0esFgUG7EWj-VyUmL3YiQJIq39S1VR6n1xV9EVE8OirLqk8MJerrMeRGttl
+  - command: deploy start -f armory-deploy.yml -c NB7l5woTJ3P8SjUQYe7yNQxzSZkrvDLA -s z8EkU0esFgUG7EWj-VyUmL3YiQJIq39S1VR6n1xV9EVE8OirLqk8MJerrMeRGttl
     plugins:
       - docker#v5.8.0:
           #image: "armory/armory-cli"
