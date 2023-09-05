@@ -3,11 +3,11 @@ kind: kubernetes
 application: potato-facts
 targets:
   staging:
-    account: kals-deployment-cluster
+    account: local-kind-cluster
     namespace: kal-deployments
     strategy: rolling
   prod:
-    account: kals-deployment-cluster
+    account: local-kind-cluster
     namespace: kal-deployments-prod
     strategy: rolling
     constraints:
